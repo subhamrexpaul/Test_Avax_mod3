@@ -10,10 +10,10 @@ contract Token{
     mapping (address => uint256) private balance;
     address private owner;
 
-    // Events for Transfer, Burn and Mint REX
-    event TransferREX(address indexed sender, address indexed receiver, uint256 REX);
-    event BurnREX(address indexed sender, uint256 REX);
-    event MintREX(address indexed receiver, uint256 REX);
+    // Events for Transfer, Burn and Mint Tokens
+    event TransferTokens(address indexed sender, address indexed receiver, uint256 tokens);
+    event BurnTokens(address indexed sender, uint256 tokens);
+    event MintTokens(address indexed receiver, uint256 tokens);
 
     //  Constructor definition
     constructor(string memory _name, string memory _symbol, uint256 _totalsupply){
@@ -24,26 +24,26 @@ contract Token{
         owner = msg.sender;
     }
 
-    // Functions for Transfer, Burn and Mint REX
+    // Functions for Transfer, Burn and Mint tokens
 
-    // to transfer REX
-    function transferREX(address _receiver, uint256 REX) public returns (bool success){
-        require(balance[msg.sender] >= REX, "Insufficient REX in your account");
+    // to transfer tokens
+    function transferTokens(address _receiver, uint256 tokens) public returns (bool success){
+        require(balance[msg.sender] >= tokens, "Insufficient tokens in your account");
         require(_receiver != address(0), "Invalid address");        // address(0) === null addresss
 
-        balance[msg.sender] -= REX;
-        balance[_receiver] += REX;
-        emit TransferREX(msg.sender, _receiver, REX);
+        balance[msg.sender] -= tokens;
+        balance[_receiver] += tokens;
+        emit TransferTokens(msg.sender, _receiver, tokens);
         return true;
     }
 
-    // to burn REX 
-    function burnREX(uint256 REX) public returns (bool success){
-        require(balance[msg.sender] >= REX, "Insufficient REX!");
+    // to burn tokens 
+    function burnTokens(uint256 tokens) public returns (bool success){
+        require(balance[msg.sender] >= tokens, "Insufficient tokens!");
         
-        balance[msg.sender] -= REX;
-        totalSupply -= REX;
-        emit BurnREX(msg.sender, REX);
+        balance[msg.sender] -= tokens;
+        totalSupply -= tokens;
+        emit BurnTokens(msg.sender, tokens);
 
         return true;
 
@@ -55,15 +55,15 @@ contract Token{
     }
 
 
-    // to mint REX
-    function mintREX(address _receiver, uint256 rex) public returns (bool success){
-        require(msg.sender == owner, "Only the contract owner can Mint REX");
+    // to mint tokens
+    function mintTokens(address _receiver, uint256 tokens) public returns (bool success){
+        require(msg.sender == owner, "Only the contract owner can Mint");
         require(_receiver != address(0), "Invalid Address");
 
-        balance[_receiver] += rex;
-        totalSupply += rex;
-        emit MintREX(_receiver, rex);
+        balance[_receiver] += tokens;
+        totalSupply += tokens;
+        emit MintTokens(_receiver, tokens);
 
-        return true;
-    }
+        return true;
+    }
 }
