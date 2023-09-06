@@ -1,4 +1,4 @@
-# Embarking on the Token Creation Quest
+# Exploring Varieties of Functions in the Token Creation and Minting Project
 A Smart Contract to create my Token on a local hardhat network and will use `Remix` to interact with it. The contract has some functions, allowing users to `Transfer`, `Burn` and `Mint` tokens.
 
 # Project Overview
