@@ -1,11 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-// write a smart contract to create your own token on a local HardHat network. Once you have your contract, 
-// you should be able to use remix to interact with it. 
-// From remix, the contract owner should be able to mint tokens to a provided address. 
-// Any user should be able to burn and mint tokens.
-
 contract Token{
     string public name;
     string public symbol;
