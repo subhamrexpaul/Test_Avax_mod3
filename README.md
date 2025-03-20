@@ -1,6 +1,8 @@
 # Exploring Varieties of Functions in the Token Creation and Minting Project
 A Smart Contract to create my Token on a local hardhat network and will use `Remix` to interact with it. The contract has some functions, allowing users to `Transfer`, `Burn` and `Mint` tokens.
 
+https://www.loom.com/share/e4a58b9f2ab54dc6a2035113f4b21e79?sid=0fc1c5fd-7aae-4a43-b8b5-3ff9e196f96c
+
 # Project Overview
 The essence of this project lies in the creation of a robust ERC20 token smart contract, which can be utilized to represent digital assets within a decentralized ecosystem. The contract will encompass the capability to mint new tokens to specified addresses, offer users the ability to burn tokens (reducing token supply), and enable straightforward token transfers between users. This project aims to empower individuals with a practical understanding of token creation and manipulation, catering to both contract owners and regular users of the token.
 
